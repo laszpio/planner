@@ -3,22 +3,22 @@
   .container
     .row
       .medium-12.columns
-        %h1 You're on the waiting list for this event.
+        %h1= t('workshops.title')
         %p
-          You've been added to the waiting list for this Codebar event. We can't guarantee you a place, but we get a lot of cancellations on the day.
-          %strong We strongly recommend you pack everything you need, as we may give you a place on short notice.
+          = t('workshops.info')
+          %strong= t('workshops.notice')
 
-        %p Please be sure you've read our #{link_to 'Code of Conduct', code_of_conduct_path} before attending.
+        %p= t('workshops.read_code', code_link: link_to('Code of Conduct', code_of_conduct_path))
 
         - if @coach
-          %p As a coach, you don't need to bring anything except patience and a willingness to teach. It can be handy to have a notebok and pen, though.
+          %p= t('workshops.coach')
         - else
-          %p As a student, you'll need to bring your laptop with you, but you shouldn't need anything else.
+          %p= t('workshops.student')
 
         %p
-          We hope to see you at Codebar soon!
-          = link_to "Drop us an email", "mailto:hello@codebar.io"
-          if you have any questions.
+          = t('workshops.see_you_soon')
+          = link_to t('workshops.drop_us_email'), "mailto:hello@codebar.io"
+          = t('workshops.questions')
         %p
-          = link_to "« Return to the workshop page", workshop_path(@workshop)
+          = link_to t('workshops.return'), workshop_path(@workshop)
 

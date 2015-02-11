@@ -6,10 +6,10 @@
         %h1.workshop.header
           = @workshop.to_s
           - if @workshop.has_host?
-            at
+            = t('workshops.location_at')
             =@workshop.host.name
           - else
-            without a home
+            = t('workshops.without_home')
     .row
       .medium-8.columns
         %p.workshop.schedule
@@ -21,7 +21,7 @@
               (in #{distance_of_time_in_words_to_now(@workshop.date_and_time)})
 
         %p
-          Attend our workshops to learn programming in a safe and supportive environment at your own pace, or to share your knowledge and mentor our students.
+          = t('workshops.slogan')
 
       .medium-4.columns
         .panel
